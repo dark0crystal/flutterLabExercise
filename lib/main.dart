@@ -7,10 +7,49 @@ void main() {
         title:const Text("Helloo world"),
         backgroundColor: Colors.amberAccent,
       ),
-      body:Text("This is the body")
+      body:const Home(),
+
     )
   ));
 }
+
+class Home extends StatelessWidget{
+  const Home({super.key});
+//@override annotation is used to indicate that a method in a subclass is intentionally overriding a method in its superclass.
+// showing explicitly that build is overriding a method from StatelessWidget (the superclass).
+@override
+// The context object is information about the location that this widget is in inside the application 
+Widget build(BuildContext context){
+  return Container(
+    width: 200,
+    height: 200,
+    color: Colors.blue,
+    child: Text("This is widget"),
+  );
+}
+}
+
+
+void SnackBarMessenger(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(message), duration: Duration(seconds: 3)),
+  );
+}
+
+void MaterialBannerMessenger(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showMaterialBanner(
+    MaterialBanner(
+      content: Text(message),
+      actions: [
+        TextButton(
+          onPressed: () => ScaffoldMessenger.of(context).hideCurrentMaterialBanner(),
+          child: Icon(Icons.close, color: Colors.red, size: 50.0),
+        )
+      ],
+    ),
+  );
+}
+
 
 
 class Computer {
