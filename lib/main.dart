@@ -20,12 +20,19 @@ class Home extends StatelessWidget{
 @override
 // The context object is information about the location that this widget is in inside the application 
 Widget build(BuildContext context){
-  return Container(
+  return Row(
+    mainAxisAlignment:MainAxisAlignment.center,
+    crossAxisAlignment:CrossAxisAlignment.center,
+    children: [
+    Container(
     width: 200,
     height: 200,
     color: Colors.blue,
+    padding: EdgeInsets.all(20), 
     child: Text("This is widget"),
-  );
+  )
+  ]); 
+  
 }
 }
 
