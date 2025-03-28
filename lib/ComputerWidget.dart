@@ -23,7 +23,7 @@ class ComputerWidget extends StatelessWidget {
                 children: [
                   Text(computer.modelName, style: const TextStyle(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('\$${computer.price.toString()}'),
+                  
                 ],
               ),
             ),
