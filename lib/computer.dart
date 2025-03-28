@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Computer {
   final String modelName;
   final double price;
@@ -14,3 +16,23 @@ final List<Computer> computers = [
   Computer(modelName: 'Dell I5 4th Gen Desktop', price: 350, imagePath: 'assets/dell-i5-4th-gen.jpg'),
   Computer(modelName: 'HP OmniStudio X All-in-One', price: 330, imagePath: 'assets/hp-omnistudio.png'),
 ];
+
+void SnackBarMessenger(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(message), duration: Duration(seconds: 3)),
+  );
+}
+
+void MaterialBannerMessenger(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showMaterialBanner(
+    MaterialBanner(
+      content: Text(message),
+      actions: [
+        TextButton(
+          onPressed: () => ScaffoldMessenger.of(context).hideCurrentMaterialBanner(),
+          child: Icon(Icons.close, color: Colors.red, size: 50.0),
+        )
+      ],
+    ),
+  );
+}
