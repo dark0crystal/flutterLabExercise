@@ -1,3 +1,4 @@
+// computers_grid.dart
 import 'package:flutter/material.dart';
 import 'package:lab2/computer.dart';
 import 'package:lab2/computerWidget.dart';
@@ -7,12 +8,26 @@ class ComputersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemCount: computers.length,
+    return ListView.builder(
+      padding: const EdgeInsets.all(8.0),
+      itemCount: (computers.length / 2).ceil(),
       itemBuilder: (context, index) {
-        final computer = computers[index];
-        return ComputerWidget(computer: computer);
+        int firstIndex = index * 2;
+        int secondIndex = firstIndex + 1;
+
+        return Column(
+          children: [
+            Row(
+              children: [
+                Expanded(child: ComputerWidget(computer: computers[firstIndex])),
+                if (secondIndex < computers.length)
+                  Expanded(child: ComputerWidget(computer: computers[secondIndex])),
+              ],
+            ),
+            if (index != (computers.length / 2).ceil() - 1)
+              const Divider(thickness: 2, color: Colors.blueAccent),
+          ],
+        );
       },
     );
   }
