@@ -58,7 +58,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+      - lib/assets/images/apple-macbook.jpeg
+      - lib/assets/images/asus-vivobook-s-14.png
+      - lib/assets/images/DELL_computer_pc.png
+      - lib/assets/images/dell_i5-4th_gen.jpg
+      - lib/assets/images/HP_OmniStudio.jpg
+      - lib/assets/images/microsoft-surface-laptop.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
