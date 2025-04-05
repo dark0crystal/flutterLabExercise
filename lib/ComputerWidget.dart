@@ -15,7 +15,9 @@ class ComputerWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(computer.imagePath, height: 100),
+            Center(
+              child: Image.asset(computer.imagePath, height: 100),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
